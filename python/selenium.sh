@@ -1,1 +1,1 @@
-java -jar /Users/dongmingang/Applications/selenium-server-standalone-2.44.0.jar
+java -jar ./selenium-server-standalone-2.44.0.jar
