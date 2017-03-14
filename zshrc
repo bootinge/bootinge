@@ -103,6 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias tensorflow="docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow"
 alias mongodb="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable --name some-mongo -d mongo"
 alias elastickorean="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -d -p 9200:9200 n42corp/elasticsearch-n42:20150922"
 alias koreanapi="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -d -p 4567:4567 n42corp/korean-morpheme-sinatra"
