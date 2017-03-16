@@ -1,4 +1,17 @@
 bootinge
 ========
 
-Repository for me
+* IaaS
+- AWS Lambda
+- Vultr
+
+* Redis
+- redislabs
+
+* CrashReport
+- Sentry.io
+
+* Mail Server
+- MailGun
+
+* Push Server
