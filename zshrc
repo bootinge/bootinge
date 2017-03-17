@@ -125,6 +125,7 @@ alias cassandra='docker run -d --name kong-database -p 9042:9042 cassandra:2.2'
 alias dockerfile="docker build ."
 alias yt="youtube-dl"
 alias freeze="pip freeze >> requirements.txt"
+alias pydev="docker run -i -t --rm python:2.7"
 
 alias tm="tmux attach -t base || tmux new -s base"
 alias huginn="docker run -it -p 3000:3000 cantino/huginn"
