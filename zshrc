@@ -121,6 +121,7 @@ alias djangooscar="docker run --memory-swap 1G --security-opt seccomp:unconfined
 alias djangoweb="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -p 80 -d -e MODULE=myapp mbentley/django-uwsgi-nginx"
 alias djangoall="git clone https://github.com/bootinge/youtube-audio-dl.git;cd youtube-audio-dl;docker-compose run --memory-swap 1G --security-opt seccomp:unconfined django pip install -r requirements.txt;docker-compose up -d;docker-compose run django python manage.py migrate;docker-compose logs"
 alias default="docker run --privileged -p 8000:8000 -v ~/mnt:/tmp -it django:latest /bin/bash"
+alias cassandra='docker run -d --name kong-database -p 9042:9042 cassandra:2.2'
 alias dockerfile="docker build ."
 alias yt="youtube-dl"
 alias freeze="pip freeze >> requirements.txt"
