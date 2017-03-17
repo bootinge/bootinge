@@ -103,6 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias jserver="json-server --watch ./db.json --port 3000"
 alias tensorflow='docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow'
 alias conda='docker run -i -t -p 8888:8888 continuumio/anaconda /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && mkdir /opt/notebooks && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip="*" --port=8888 --no-browser"'
 alias mongodb="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable --name some-mongo -d mongo"
