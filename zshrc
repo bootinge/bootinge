@@ -219,6 +219,10 @@ function docker_cleanup() {
 	docker rmi $(docker images -q);
 }
 
+function docker_search() {
+        docker search $1
+}
+
 alias dc_killall=docker_killall
 alias attach=docker_attach
 alias dc_run=docker_create_container
