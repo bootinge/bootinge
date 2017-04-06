@@ -104,24 +104,24 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias jserver="json-server --watch ./db.json --port 3000"
-alias tensorflow='docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow'
-alias conda='docker run -i -t -p 8888:8888 continuumio/anaconda /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && mkdir /opt/notebooks && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip="*" --port=8888 --no-browser"'
-alias mongodb="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable --name some-mongo -d mongo"
+alias tensorflow='docker run --hostname server1 -it -p 8888:8888 gcr.io/tensorflow/tensorflow'
+alias conda='docker run --hostname server1 -i -t -p 8888:8888 continuumio/anaconda /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && mkdir /opt/notebooks && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip="*" --port=8888 --no-browser"'
+alias mongodb="docker run --hostname server1 --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable --name some-mongo -d mongo"
 alias elastickorean="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -d -p 9200:9200 n42corp/elasticsearch-n42:20150922"
-alias koreanapi="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -d -p 4567:4567 n42corp/korean-morpheme-sinatra"
-alias jenkins="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -p 8080:8080 -p 50000:50000 jenkins"
-alias spark="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -it -p 8088:8088 -p 8042:8042 -p 4040:4040 -h sandbox sequenceiq/spark:1.6.0 bash"
-alias ionic="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -ti --rm -p 8100:8100 -p 35729:35729 --privileged -v ~/.gradle:/root/.gradle -v \$PWD:/myApp:rw agileek/ionic-framework ionic"
-alias centos="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -ti -p 8000:8000 --rm centos:latest /bin/bash"
-alias ubuntu="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -it ubuntu:trusty /bin/bash"
-alias nodejs="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -it -p 3000:3000 -p 8000:8000 node:latest /bin/bash"
-alias mean="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -it -p 3000:3100 -p 8000:8500 meanjs/mean /bin/bash"
-alias django="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -p 8000:8100 -it django:latest /bin/bash"
-alias djangooscar="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -u root -p 8000:8600 -it oscarcommerce/django-oscar-sandbox /bin/bash"
-alias djangoweb="docker run --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -p 80 -d -e MODULE=myapp mbentley/django-uwsgi-nginx"
+alias koreanapi="docker run --hostname server1 --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -d -p 4567:4567 n42corp/korean-morpheme-sinatra"
+alias jenkins="docker run --hostname server1 --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -p 8080:8080 -p 50000:50000 jenkins"
+alias spark="docker run --hostname server1 --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -it -p 8088:8088 -p 8042:8042 -p 4040:4040 -h sandbox sequenceiq/spark:1.6.0 bash"
+alias ionic="docker run --hostname server1 --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -ti --rm -p 8100:8100 -p 35729:35729 --privileged -v ~/.gradle:/root/.gradle -v \$PWD:/myApp:rw agileek/ionic-framework ionic"
+alias centos="docker run --hostname server1 --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -ti -p 8000:8000 --rm centos:latest /bin/bash"
+alias ubuntu="docker run --hostname server1 --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -it ubuntu:trusty /bin/bash"
+alias nodejs="docker run --hostname server1 --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -it -p 3000:3000 -p 8000:8000 node:latest /bin/bash"
+alias mean="docker run --hostname server1 --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -it -p 3000:3100 -p 8000:8500 meanjs/mean /bin/bash"
+alias django="docker run --hostname server1 --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -p 8000:8100 -it django:latest /bin/bash"
+alias djangooscar="docker run --hostname server1 --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -u root -p 8000:8600 -it oscarcommerce/django-oscar-sandbox /bin/bash"
+alias djangoweb="docker run --hostname server1 --memory-swap 1G --security-opt seccomp:unconfined --privileged --cpu-period=50000 --cpu-quota=25000 --oom-kill-disable -p 80 -d -e MODULE=myapp mbentley/django-uwsgi-nginx"
 alias djangoall="git clone https://github.com/bootinge/youtube-audio-dl.git;cd youtube-audio-dl;docker-compose run --memory-swap 1G --security-opt seccomp:unconfined django pip install -r requirements.txt;docker-compose up -d;docker-compose run django python manage.py migrate;docker-compose logs"
-alias default="docker run --privileged -p 8000:8000 -v ~/mnt:/tmp -it django:latest /bin/bash"
-alias cassandra='docker run -d --name kong-database -p 9042:9042 cassandra:2.2'
+alias default="docker run --hostname server1 --privileged -p 8000:8000 -v ~/mnt:/tmp -it django:latest /bin/bash"
+alias cassandra='docker run -d --hostname server1 --name kong-database -p 9042:9042 cassandra:2.2'
 alias dockerfile="docker build ."
 alias yt="youtube-dl"
 alias freeze="pip freeze >> requirements.txt"
