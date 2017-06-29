@@ -189,6 +189,11 @@ function docker_run () {
         docker exec $1 $2
 }
 
+function docker_build() {
+        name=${PWD##*/}
+        docker build --tag $name:0.1 .
+}
+
 function docker_attach_quick () {
         docker exec -i -t $(docker ps -q | head -n 1) /bin/bash
 }
@@ -224,6 +229,7 @@ function docker_search() {
         docker search $1
 }
 
+alias dc_compose="docker-compose up"
 alias dc_killall=docker_killall
 alias attach=docker_attach
 alias dc_run=docker_create_container
